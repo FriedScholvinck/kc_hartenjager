@@ -3,6 +3,14 @@ let CardTypes = [
 { name: "klaver", image: "assets/klaver.png" },
 { name: "ruiten", image: "assets/ruiten.png" },
 { name: "schoppen", image: "assets/schoppen.png" },
+{ name: "harten", image: "assets/harten.png" },
+{ name: "klaver", image: "assets/klaver.png" },
+{ name: "ruiten", image: "assets/ruiten.png" },
+{ name: "schoppen", image: "assets/schoppen.png" },
+{ name: "harten", image: "assets/harten.png" },
+{ name: "klaver", image: "assets/klaver.png" },
+{ name: "ruiten", image: "assets/ruiten.png" },
+{ name: "schoppen", image: "assets/schoppen.png" },
 ];
 
 let shuffleCards = () => {

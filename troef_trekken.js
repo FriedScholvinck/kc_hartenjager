@@ -16,7 +16,7 @@ console.clear();
   }
   
   function start() {
-    if(startingHands < 3) {
+    if(startingHands < 0) {
       startingHands++;
       draw();
       
