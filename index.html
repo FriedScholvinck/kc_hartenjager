@@ -4,69 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
   <title>KC 't Hartenjagertje</title>
-  <link rel="stylesheet" href="styles.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css'><link rel="stylesheet" href="./style.css">
   
-
-  <script src="https://d309knd7es5f10.cloudfront.net/createjs_1.1_min.js"></script>
-  <script src="https://d309knd7es5f10.cloudfront.net/zim_9.4.1.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuOiBodHRwczovL2NvZGVwZW4uaW8vU2FyYW1hemFsICYgR2l0SHViOiBodHRwczovL2dpdGh1Yi5jb20vc2FyYW1hemFs -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="style_index.css">
+  
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-  <nav>
+  <!-- <nav>
     <a href="index.html" class="active">Thuis</a>
     <a href="wij.html">Wij</a>
     <a href="zij.html">Zij</a>
     <a href="alto.html">Alto's</a>
-    <a href="statuten.html">Statuten</a>
-  </nav>
+    <a href="overig.html">Overig</a>
+  </nav> -->
 
-  <div class="deck-of-cards">
-      <img class="first" src="assets/ace-of-clubs.png">
-      <img class="second" src="assets/ace-of-diamonds.png">
-      <img class="third" src="assets/ace-of-hearts.png">
-      <img class="fourth" src="assets/ace-of-spades.png">
-      <img class="fifth" src="assets/ace-of-clubs.png">
-    <!-- <img class="first" src="https://img.favpng.com/16/7/9/playing-card-hearts-contract-bridge-suit-king-png-favpng-pKbmB0DDQWFQsAfMuUitPWFAF_t.jpg"> -->
-    <!-- <img class="second" src="https://img.favpng.com/3/7/1/playing-card-curse-of-scotland-suit-ace-king-png-favpng-0ZPV7PS7SQazXgSQ2WDJBE5fu_t.jpg"> -->
-    <!-- <img class="third" src="https://img.favpng.com/15/23/7/playing-card-ace-of-spades-standard-52-card-deck-suit-png-favpng-Tt8L1mr5rKwUHdLyVE29DpBsw_t.jpg"> -->
-    <!-- <img class="fourth" src="https://img.favpng.com/0/8/18/playing-card-suit-ace-of-hearts-png-favpng-NvRpTaFrQwcWEP6Lm5gdCCxhB_t.jpg"> -->
-    <!-- <img class="fifth" src="https://img.favpng.com/8/18/21/playing-card-hearts-euchre-jack-card-game-png-favpng-xLg0Y1HWsnRPr4sgTND0p0YQp_t.jpg"> -->
-</div>
-
-
-<div id="app">
-    <div class="info">
-      <div><span class="label">Time:</span><span class="value">{{ time }} </span></div>
-      <div><span class="label">Turns:</span><span class="value">{{ turns }} </span></div>
-    </div>
-    <div class="cards">
-      <div class="card" v-for="card in cards" :class="{ flipped: card.flipped, found: card.found }" @click="flipCard(card)">
-        <div class="back"></div>
-        <div class="front" :style="{ backgroundImage: 'url(' + card.image + ')' }"></div>
+  <!-- partial:index.partial.html -->
+<sectio class="nav">
+    <h1>KC 't Hartenjagertje</h1>
+    <h3 class="span loader">
+        <span class="m">K</span><span class="m">L</span><span class="m">A</span><span class="m">V</span><span class="m">E</span><span class="m">R</span><span class="m">J</span><span class="m">A</span><span class="m">S</span><span class="m">S</span><span class="m">E</span><span class="m">N</span><span class="m">&nbsp;</span></h3>
+    <div class="nav-container"><a class="nav-tab" href="#tab-svelte">Wij</a><a class="nav-tab" href="#tab-esbuild">Zij</a><a class="nav-tab" href="#tab-next">Kalender</a><a class="nav-tab" href="#tab-typescript">Overig</a><span class="nav-tab-slider"></span></div>
+  </sectio>
+  <main class="main">
+    <section class="slider" id="tab-svelte">
+        <a href="wij.html"><h1>Wij</h1></a>
+      <h2>de kaartclub</h2>
+    </section>
+    <section class="slider" id="tab-esbuild">
+        <a href="zij.html"><h1>Zij</h1></a>
+      <h2>spelletjes</h2>
+    </section>
+    <section class="slider" id="tab-next">
+        <a href="alto.html"><h1>Programma</h1></a>
+      <div class="event">
+        <img src="event1.jpg" alt="">
+        <h2>Alto</h2>
+        <p>Datum: ... november 2023</p>
+        <p>Locatie: ...</p>
+        <p>Clubdrank: ...</p>
       </div>
-    </div>
-    <div class="splash" v-if="showSplash">
-      <div class="overlay"></div>
-      <div class="content">
-        <div class="title">You won!</div>
-        <div class="score">Score: {{ score }}</div>
-        <button class="newGame" @click="resetGame()">New game</button>
-      </div>
-    </div>
-  </div>
-
+    </section>
+    <section class="slider" id="tab-typescript">
+        <a href="overig.html"><h1>Overig</h1></a>
+        <h2>Spelregels</h2>
+        <h2>Statuten</h2>
+        <h2>Wedstrijdverslagen</h2>
+    </section>
+  </main>
+  <canvas class="background"></canvas>
   
-    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='//cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js'></script><script  src="./script.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script  src="./script_particles.js"></script>
   
-
-
-
 </body>
 </html>
