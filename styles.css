@@ -1,0 +1,277 @@
+:root {
+  --main-color: #ff0000;
+  --accent-color: #000000;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: var(--main-color);
+  text-align: center;
+  margin: 50px;
+}
+
+h2 {
+  color: var(--accent-color);
+}
+
+.deck-of-cards {
+  margin-top: 20%;
+  margin-left: 20%;
+}
+.deck-of-cards img {
+  position: absolute;
+  transform-origin: bottom left;
+  transition: 0.8s ease;
+}
+.deck-of-cards:hover .first {
+  transform: rotate(-30deg);
+}
+.deck-of-cards:hover .second {
+  transform: rotate(-20deg);
+}
+.deck-of-cards:hover .third {
+  transform: rotate(-10deg);
+}
+.deck-of-cards:hover .fifth {
+  transform: rotate(10deg);
+}
+.deck-of-cards .first:hover {
+  transform: scale(1.1) rotate(-30deg);
+  border: 4px solid midnightblue;
+  border-radius: 15px;
+}
+.deck-of-cards .second:hover {
+  transform: scale(1.1) rotate(-20deg);
+  border: 4px solid midnightblue;
+  border-radius: 15px;
+}
+.deck-of-cards .third:hover {
+  transform: scale(1.1) rotate(-10deg);
+  border: 4px solid midnightblue;
+  border-radius: 15px;
+}
+.deck-of-cards .fourth:hover {
+  transform: scale(1.1);
+  border: 4px solid midnightblue;
+  border-radius: 15px;
+}
+.deck-of-cards .fifth:hover {
+  transform: scale(1.1) rotate(10deg);
+  border: 4px solid midnightblue;
+  border-radius: 15px;
+}
+
+
+nav {
+  background-color: var(--main-color);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  /* padding: 14px 16px; */
+  text-decoration: none;
+  transition: backgroud-color 0.3s;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+}
+
+nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+nav a.active {
+  background-color: var(--accent-color);
+  color: white;
+  animation: bounce 0.5s;
+}
+
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+
+.content {
+  text-align: center;
+  margin: 50px;
+}
+
+#myCanvas {
+  z-index: 1;
+  position: absolute;
+}
+
+.team-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.team-member {
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.team-member h2 {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.team-member p {
+  color: #666;
+}
+
+.hearts { background-color: #ff5050; }
+.diamonds { background-color: #ffcc00; }
+.clubs { background-color: #4da6ff; }
+.spades { background-color: #00cc66; }
+
+.suit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.events-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.event {
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.event img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.event h2 {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.event p {
+  color: #666;
+}
+
+.careers-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.job-position {
+  width: 300px;
+  margin: 20px;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.job-position h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.job-position p {
+  color: #666;
+}
+
+.job-position ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  color: #666;
+}
+
+.job-position li {
+  list-style-type: disc;
+}
+
+.projects-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.project {
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.project h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.project p {
+  color: #666;
+}

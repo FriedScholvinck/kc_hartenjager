@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+  <title>KC 't Hartenjagertje</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet' href='https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css'><link rel="stylesheet" href="./style.css">
+  
+
+  <script src="https://d309knd7es5f10.cloudfront.net/createjs_1.1_min.js"></script>
+  <script src="https://d309knd7es5f10.cloudfront.net/zim_9.4.1.js"></script>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html" class="active">Thuis</a>
+    <a href="wij.html">Wij</a>
+    <a href="zij.html">Zij</a>
+    <a href="alto.html">Alto's</a>
+    <a href="statuten.html">Statuten</a>
+  </nav>
+
+  <div class="deck-of-cards">
+      <img class="first" src="assets/ace-of-clubs.png">
+      <img class="second" src="assets/ace-of-diamonds.png">
+      <img class="third" src="assets/ace-of-hearts.png">
+      <img class="fourth" src="assets/ace-of-spades.png">
+      <img class="fifth" src="assets/ace-of-clubs.png">
+    <!-- <img class="first" src="https://img.favpng.com/16/7/9/playing-card-hearts-contract-bridge-suit-king-png-favpng-pKbmB0DDQWFQsAfMuUitPWFAF_t.jpg"> -->
+    <!-- <img class="second" src="https://img.favpng.com/3/7/1/playing-card-curse-of-scotland-suit-ace-king-png-favpng-0ZPV7PS7SQazXgSQ2WDJBE5fu_t.jpg"> -->
+    <!-- <img class="third" src="https://img.favpng.com/15/23/7/playing-card-ace-of-spades-standard-52-card-deck-suit-png-favpng-Tt8L1mr5rKwUHdLyVE29DpBsw_t.jpg"> -->
+    <!-- <img class="fourth" src="https://img.favpng.com/0/8/18/playing-card-suit-ace-of-hearts-png-favpng-NvRpTaFrQwcWEP6Lm5gdCCxhB_t.jpg"> -->
+    <!-- <img class="fifth" src="https://img.favpng.com/8/18/21/playing-card-hearts-euchre-jack-card-game-png-favpng-xLg0Y1HWsnRPr4sgTND0p0YQp_t.jpg"> -->
+</div>
+
+
+<div id="app">
+    <div class="info">
+      <div><span class="label">Time:</span><span class="value">{{ time }} </span></div>
+      <div><span class="label">Turns:</span><span class="value">{{ turns }} </span></div>
+    </div>
+    <div class="cards">
+      <div class="card" v-for="card in cards" :class="{ flipped: card.flipped, found: card.found }" @click="flipCard(card)">
+        <div class="back"></div>
+        <div class="front" :style="{ backgroundImage: 'url(' + card.image + ')' }"></div>
+      </div>
+    </div>
+    <div class="splash" v-if="showSplash">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="title">You won!</div>
+        <div class="score">Score: {{ score }}</div>
+        <button class="newGame" @click="resetGame()">New game</button>
+      </div>
+    </div>
+  </div>
+
+  
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.12.0/lodash.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js'></script><script  src="./script.js"></script>
+  
+
+
+
+</body>
+</html>
