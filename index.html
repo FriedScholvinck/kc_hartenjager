@@ -1,68 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
-  <title>KC 't Hartenjagertje</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <!-- SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuOiBodHRwczovL2NvZGVwZW4uaW8vU2FyYW1hemFsICYgR2l0SHViOiBodHRwczovL2dpdGh1Yi5jb20vc2FyYW1hemFs -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="style_index.css">
-  
-  <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+    <title>KC 't Hartenjagertje</title>  
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&amp;display=swap'><link rel="stylesheet" href="./style.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- <nav>
+  <nav>
     <a href="index.html" class="active">Thuis</a>
     <a href="wij.html">Wij</a>
     <a href="zij.html">Zij</a>
     <a href="alto.html">Alto's</a>
     <a href="overig.html">Overig</a>
-  </nav> -->
+  </nav>
 
-  <!-- partial:index.partial.html -->
-<sectio class="nav">
-    <h1>KC 't Hartenjagertje</h1>
-    <h3 class="span loader">
-        <span class="m">K</span><span class="m">L</span><span class="m">A</span><span class="m">V</span><span class="m">E</span><span class="m">R</span><span class="m">J</span><span class="m">A</span><span class="m">S</span><span class="m">S</span><span class="m">E</span><span class="m">N</span><span class="m">&nbsp;</span></h3>
-    <div class="nav-container"><a class="nav-tab" href="#tab-svelte">Wij</a><a class="nav-tab" href="#tab-esbuild">Zij</a><a class="nav-tab" href="#tab-next">Kalender</a><a class="nav-tab" href="#tab-typescript">Overig</a><span class="nav-tab-slider"></span></div>
-  </sectio>
-  <main class="main">
-    <section class="slider" id="tab-svelte">
-        <a href="wij.html"><h1>Wij</h1></a>
-      <h2>de kaartclub</h2>
-    </section>
-    <section class="slider" id="tab-esbuild">
-        <a href="zij.html"><h1>Zij</h1></a>
-      <h2>spelletjes</h2>
-    </section>
-    <section class="slider" id="tab-next">
-        <a href="alto.html"><h1>Programma</h1></a>
-      <div class="event">
-        <img src="event1.jpg" alt="">
-        <h2>Alto</h2>
-        <p>Datum: ... november 2023</p>
-        <p>Locatie: ...</p>
-        <p>Clubdrank: ...</p>
-      </div>
-    </section>
-    <section class="slider" id="tab-typescript">
-        <a href="overig.html"><h1>Overig</h1></a>
-        <h2>Spelregels</h2>
-        <h2>Statuten</h2>
-        <h2>Wedstrijdverslagen</h2>
-    </section>
-  </main>
-  <canvas class="background"></canvas>
-  
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-    <script  src="./script_particles.js"></script>
+  <div id="frame">
+    <p>Troef Trekken</p>
+    <div id="table">
+      <div class="card card--sample"><span class="card__symbol card__symbol--heart">♣</span></div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js'></script>
+  <script src="troef_trekken.js"></script>
   
 </body>
 </html>
