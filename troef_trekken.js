@@ -62,8 +62,9 @@ console.clear();
     let card = document.createElement('div');
     card.className = 'card';
     let span = document.createElement('span');
-    span.className = 'card__symbol' + (Math.random() >= 0.5 ? ' card__symbol--red' : '');
-    span.appendChild(document.createTextNode(getRandomSymbol()))
+    var symbol = getRandomSymbol();
+    span.appendChild(document.createTextNode(symbol))
+    span.className = 'card__symbol' + (["♥", "♦"].includes(symbol) ? ' card__symbol--red' : '');
     card.appendChild(span);
     table.appendChild(card);
     
