@@ -13,7 +13,7 @@ h1 {
   color: var(--card-black);
   text-align: center;
   font-family: "ROBOTO", sans-serif;
-  font-size: 5vw;
+  font-size: 4vw;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   letter-spacing: 0.5rem;
@@ -114,6 +114,13 @@ nav a.active {
   perspective: 800px;
   transform-style: preserve-3d;
   overflow: hidden;
+
+  background-image: url('assets/hartenjagertje.png');
+  /* background-color: rgba(255, 255, 255, 0.25); */
+  /* background-blend-mode: lighten; */
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 #frame > p {
   /* font-family: "Source Sans Pro", sans-serif; */
@@ -135,8 +142,8 @@ nav a.active {
   height: 70%;
   perspective: 1200px;
   transform: rotateY(-15deg) rotateX(40deg);
-  background: var(--table-color);
-  box-shadow: 0 0 100px 100px var(--table-color);
+  /* background: var(--table-color); */
+  /* box-shadow: 0 0 100px 100px var(--table-color); */
 }
 #table .card {
   position: absolute;
@@ -156,6 +163,10 @@ nav a.active {
 }
 #table .card__symbol--red {
   color: var(--card-red);
+}
+#table .card__symbol--red .first__card {
+  /* fly in on screen refresh */
+  animation: flyin 0.5s ease-in-out 0.5s forwards;
 }
 #table .card--sample {
   top: 40%;
@@ -188,9 +199,9 @@ nav a.active {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 15px;
-  /* background-color: #fff; */
   position: relative;
   /* overflow: hidden; */
+  background-color: white;
 }
 
 .team-member img {
@@ -205,10 +216,10 @@ nav a.active {
   color: #666;
 }
 
-.hearts { background-color: #ff5050; }
+/* .hearts { background-color: #ff5050; }
 .diamonds { background-color: #ffcc00; }
 .clubs { background-color: #4da6ff; }
-.spades { background-color: #00cc66; }
+.spades { background-color: #00cc66; } */
 
 .suit {
   position: relative;
@@ -245,3 +256,55 @@ nav a.active {
   color: #666;
 }
 
+#TroefCardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: calc(100vw - 10vw); /* Trek marge af van de volledige breedte */
+  height: calc(100vh - 10vw); /* Trek marge af van de volledige hoogte */
+  gap: 1em;
+  margin: 1em auto; /* Voeg marge toe en centreer horizontaal */
+  box-sizing: border-box; /* Zorg dat de marge binnen de opgegeven breedte en hoogte valt */
+}
+
+
+.troefcard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  /* background-color: white;  */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  opacity: 1;
+
+  /* Flexibele grootte behoud van aspect ratio */
+  /* padding-top: 45%; Verhouding gebaseerd op breedte */
+}
+
+.troefcard:hover {
+  transform: scale(1.1);
+}
+
+.hearts {
+  background-image: url('assets/hartenjagertje.png');
+}
+
+.spades {
+  background-image: url('assets/schoppenjagertje.png');
+}
+
+.diamonds {
+  background-image: url('assets/ruitenjagertje.png');
+}
+
+.clubs {
+  background-image: url('assets/klaverjagertje.png');
+}
+
+.dimmed {
+  opacity: 0.5;
+}
