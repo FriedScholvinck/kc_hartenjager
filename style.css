@@ -314,7 +314,7 @@ nav a.active {
 
 .card-values-column {
   /* width: 50%; */
-  margin: 5%;
+  /* margin: 5%; */
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 5px;
@@ -336,6 +336,7 @@ nav a.active {
   text-overflow: ellipsis; /* Adds an ellipsis if the text is too long */
   padding: 0 5px; /* Optional: Add some padding for better spacing */
   text-align: left;
+  font-size: 1.6em;
 }
 
 .value-box {
