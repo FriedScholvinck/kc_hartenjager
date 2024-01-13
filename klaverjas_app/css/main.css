@@ -280,3 +280,10 @@ div, input {
 .slider::-webkit-slider-thumb:hover::-webkit-slider-runnable-track {
   background: var(--quaternary-color);
 }
+
+* {
+  -webkit-user-select: none; /* Safari and older iOS versions */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported in most modern browsers */
+}
