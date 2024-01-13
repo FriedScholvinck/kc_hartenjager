@@ -44,7 +44,14 @@
         <input type="hidden" id="totalScoreWij">
         <input type="hidden" id="totalScoreZij">
         <div class="overview__header">Wij -<span id="totalWij" class="overview__total">0</span></div>
-        <div class=""><input type="number" min="0" max="262" onChange="calcScore('wij')" id="scoreWij" class="input-score" placeholder="punten Wij"></div>
+        
+        <!-- main input -->
+        <div class="slider-container">
+          <span id="slider-value-Wij">81</span>
+          <input type="range" min="0" max="162" value="81" class="slider" id="scoreWij" oninput="calcScore('Wij')">
+        </div>
+    
+        <!-- <div class=""><input type="number" min="0" max="262" onChange="calcScore('Wij')" id="scoreWij" class="input-score" placeholder="punten Wij"></div> -->
         <div class="score__actions">
           <button class="button button--score button--nat" onclick="nat('wij')">Nat</button>
           <button class="button button--score button--verzaakt" onclick="verzaakt('wij')">Verz</button>
@@ -56,11 +63,18 @@
           <button class="button button--score button--roem" onclick="addRoem('wij', 50)">+50</button>
           <button class="button button--score button--roem" onclick="addRoem('wij', 100)">+100</button>
         </div>
-
+        
       </div>
       <div class="overview__col">
         <div class="overview__header">Zij -<span id="totalZij" class="overview__total">0</span></div>
-        <div class=""><input type="number" min="0" max="262" onChange="calcScore('zij')" id="scoreZij" class="input-score" placeholder="punten Zij"></div>
+        
+        <!-- main input -->
+        <div class="slider-container">
+          <span id="slider-value-Zij">81</span>
+          <input type="range" min="0" max="162" value="81" class="slider" id="scoreZij" oninput="calcScore('Zij')">
+        </div>    
+        <!-- <div class=""><input type="number" min="0" max="262" onChange="calcScore('zij')" id="scoreZij" class="input-score" placeholder="punten Zij"></div> -->
+        
         <div class="score__actions">
           <button class="button button--score button--nat" onclick="nat('zij')">Nat</button>
           <button class="button button--score button--verzaakt" onclick="verzaakt('zij')">Verz</button>

@@ -1,0 +1,183 @@
+body {
+  background-color: #ccc;  
+}
+.container {
+  margin: 2em auto;
+  width:500px;
+  height:230px;
+  -webkit-perspective: 500px;
+  perspective: 500px;
+}
+
+.card {
+  display:inline-block;
+  position:relative;
+  box-sizing: border-box;
+  height: 150px;
+  width: 100px;
+  margin: 0 5px 5px;
+  -webkit-transition: all 0.8s ease-out;
+  -moz-transition: all 0.8s ease-out;
+  -o-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  font-weight: bold;
+  color: #000;
+}
+
+.card .front,
+.card .back {
+  height:100%;
+  width:100%;
+  position: absolute;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  -webkit-box-shadow:1px 1px 1px rgba(0,0,0,0.4);
+  box-shadow:1px 1px 1px rgba(0,0,0,0.4);
+  overflow:hidden;
+}
+
+.card .front {
+  background-color: #fff;
+  text-align:center;
+}
+
+.card .back {
+  background-color: #0a47c1;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+
+}
+
+.flipped {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/* Use numeric entities */
+
+.card .front::after {
+  display:block;
+  font-size: 0.6em;
+  /* margin: 65% 0 0 25%; */
+}
+
+.card[data-suite="spades"],
+.card[data-suite="clubs"] {
+  color:black;
+}
+
+.card[data-suite="hearts"],
+.card[data-suite="diamonds"] {
+  color:red;
+}
+
+.card[data-suite="spades"] .front::after,
+.card[data-suite="spades"] .first::after,
+.card[data-suite="spades"] .last::before {
+  /* &spades; */
+  /* content:"\2660"; */
+  /* content:""; */
+  content:"Voorzitter";
+}
+
+.card[data-suite="clubs"] .front::after,
+.card[data-suite="clubs"] .first::after,
+.card[data-suite="clubs"] .last::before {
+  /* &clubs; */
+  /* content:"\2663"; */
+  content:"Vieze Voorzitter";
+}
+
+.card[data-suite="diamonds"] .front::after,
+.card[data-suite="diamonds"] .first::after,
+.card[data-suite="diamonds"] .last::before {
+  /* &diams; */
+  /* content:"\2666"; */
+  content:"Penningmeester";
+}
+.card[data-suite="hearts"] .front::after,
+.card[data-suite="hearts"] .first::after,
+.card[data-suite="hearts"] .last::before {
+  /* &hearts; */
+  /* content:"\2665"; */
+  content:"Secretaris";
+}
+
+
+/* Card values */
+
+.card .front::after,
+.card .front::before {
+  display:block;
+  position:absolute;
+}
+
+.card span:first-child {
+  top:10px;
+  left:10px;
+}
+
+.card span:last-child {
+  bottom:10px;
+  right:10px;
+}
+
+.card .last::after {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.card span {
+  display:block;
+  position:absolute;
+}
+
+.card span::before,
+.card span::after {
+  display: block;
+  line-height: 0.9em;
+}
+
+.card[data-value="A"] span:first-child::before,
+.card[data-value="A"] span:last-child::after {
+  content: "A";
+}
+
+.card[data-value="2"] span:first-child::before,
+.card[data-value="2"] span:last-child::after {
+  content: "R";
+} 
+
+.card[data-value="3"] span:first-child::before,
+.card[data-value="3"] span:last-child::after {
+  content: "J";
+}
+
+.card[data-value="4"] span:first-child::before,
+.card[data-value="4"] span:last-child::after {
+  content: "F";
+} 
+
+.card .back::before {
+  display:block;
+  content: " ";
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background:transparent repeat left top;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+");
+}

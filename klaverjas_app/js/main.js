@@ -71,13 +71,14 @@ function next_round() {
 }
 
 
+
 function addRound() {
   if (localStorage.getItem("round") === null) {
     var currRound = 1;
   } else {
     var currRound = localStorage.getItem("round");
   }
-
+  
   if (currRound<=16) {
     var options = {
       duration: 3,
@@ -90,10 +91,10 @@ function addRound() {
     } else {
       console.error(roundDisplay.error);
     }
-
+    
     localStorage.setItem("round", parseInt(currRound) + 1);
   }
-
+  
   var scoreWijArr = [];
   var scoreWij = document.getElementById("scoreWij").value;
   if (localStorage.getItem("scoreWij") !== null) {
@@ -101,7 +102,7 @@ function addRound() {
   }
   scoreWijArr.push(scoreWij);
   localStorage.setItem("scoreWij", JSON.stringify(scoreWijArr));
-
+  
   var scoreZijArr = [];
   var scoreZij = document.getElementById("scoreZij").value;
   if (localStorage.getItem("scoreZij") !== null) {
@@ -109,7 +110,7 @@ function addRound() {
   }
   scoreZijArr.push(scoreZij);
   localStorage.setItem("scoreZij", JSON.stringify(scoreZijArr));
-
+  
   var roemWijArr = [];
   var roemWij = document.getElementById("roemWij").value;
   if (localStorage.getItem("roemWij") !== null) {
@@ -117,7 +118,7 @@ function addRound() {
   }
   roemWijArr.push(roemWij);
   localStorage.setItem("roemWij", JSON.stringify(roemWijArr));
-
+  
   var roemZijArr = [];
   var roemZij = document.getElementById("roemZij").value;
   if (localStorage.getItem("roemZij") !== null) {
@@ -125,7 +126,7 @@ function addRound() {
   }
   roemZijArr.push(roemZij);
   localStorage.setItem("roemZij", JSON.stringify(roemZijArr));
-
+  
   // velden leegmaken
   document.getElementById("scoreWij").value = '';
   document.getElementById("scoreZij").value = '';
@@ -136,17 +137,21 @@ function addRound() {
   if (currRound == 16) {
     finished();
   }
+  
+}
 
+function updateSliderValue(inputId) {
+  var slider = document.getElementById(`score${inputId}`);
+  var sliderValue = document.getElementById(`slider-value-${inputId}`);
+  sliderValue.textContent = slider.value;
 }
 
 function calcScore(partij) {
-  if (partij == 'wij') {
-    var wij = document.getElementById("scoreWij").value;
-    document.getElementById("scoreZij").value = (162 - wij);
-  } else if (partij == 'zij') {
-    var zij = document.getElementById("scoreZij").value;
-    document.getElementById("scoreWij").value = (162 - zij);
-  }
+  var score = document.getElementById("score" + partij).value;
+  var otherPartij = partij == 'Wij' ? 'Zij' : 'Wij';
+  document.getElementById("score" + otherPartij).value = (162 - score);
+  updateSliderValue(partij);
+  updateSliderValue(otherPartij);
 }
 
 function setScores() {
@@ -470,7 +475,7 @@ function resetRound() {
     //   }
     // })
   } else {
-    Swal.fire('Nog geen scores aanwezig', 'Er zijn nog geen scores aanwezig om te wissen.', 'error');
+    // Swal.fire('Nog geen scores aanwezig', 'Er zijn nog geen scores aanwezig om te wissen.', 'error');
   }
 
 }
