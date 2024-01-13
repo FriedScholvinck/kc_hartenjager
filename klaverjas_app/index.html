@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Klaverjassen</title>
+  <meta name="description" content="Scoreformulier voor klaverjassen.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body onload="init()">
+  <div class="page-wrapper">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/countup.js"></script>
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/412cd732db.js" crossorigin="anonymous"></script>
+
+    <div class="round-wrapper">
+      <div class="round">
+        <div class="round__description">Ronde</div>
+        <div id="roundDisplay" class="round__display">1</div>
+      </div>
+      <div id="player-wrapper"></div>
+      <div class="add-players"><i class="fas fa-users players-icon"></i> <a href="javascript:;" id="add-players-cta" onclick="show_players()">Spelers</a></div>
+    </div>
+    <div class="overview">
+      <div class="overview__col">
+        <input type="hidden" id="totalScoreWij">
+        <input type="hidden" id="totalScoreZij">
+        <div class="overview__header">Wij -<span id="totalWij" class="overview__total">0</span></div>
+        <div class=""><input type="number" min="0" max="262" onChange="calcScore('wij')" id="scoreWij" class="input-score" placeholder="punten Wij"></div>
+        <div class="score__actions">
+          <button class="button button--score button--nat" onclick="nat('wij')">Nat</button>
+          <button class="button button--score button--verzaakt" onclick="verzaakt('wij')">Verz</button>
+          <button class="button button--score button--pit" onclick="pit('wij')">Pit</button>
+        </div>
+        <div class=""><input type="number" id="roemWij" class="input-score" placeholder="roem Wij"></div>
+        <div class="score__actions">
+          <button class="button button--score button--roem" onclick="addRoem('wij', 20)">+20</button>
+          <button class="button button--score button--roem" onclick="addRoem('wij', 50)">+50</button>
+          <button class="button button--score button--roem" onclick="addRoem('wij', 100)">+100</button>
+        </div>
+
+      </div>
+      <div class="overview__col">
+        <div class="overview__header">Zij -<span id="totalZij" class="overview__total">0</span></div>
+        <div class=""><input type="number" min="0" max="262" onChange="calcScore('zij')" id="scoreZij" class="input-score" placeholder="punten Zij"></div>
+        <div class="score__actions">
+          <button class="button button--score button--nat" onclick="nat('zij')">Nat</button>
+          <button class="button button--score button--verzaakt" onclick="verzaakt('zij')">Verz</button>
+          <button class="button button--score button--pit" onclick="pit('zij')">Pit</button>
+        </div>
+        <div class=""><input type="number" id="roemZij" class="input-score" placeholder="roem Zij"></div>
+        <div class="score__actions">
+          <button class="button button--score button--roem" onclick="addRoem('zij', 20)">+20</button>
+          <button class="button button--score button--roem" onclick="addRoem('zij', 50)">+50</button>
+          <button class="button button--score button--roem" onclick="addRoem('zij', 100)">+100</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="actions">
+      <button class="button button--primary" onClick="resetRound();"><i class="fa fa-undo-alt"></i></button>
+      <button class="button button--primary" onClick="next_round(); return false;"><i class="fas fa-check"></i></button>
+      <button class="button button--primary" onClick="newGame();"><i class="fa fa-step-forward"></i></button>
+    </div>
+
+    <h2 class="score-list__header"></h2>
+
+    <div class="score-table-wrapper">
+      <table class="score-table" cellspacing="0" cellpadding="0">
+        <tr>
+          <td></td>
+          <td colspan="2" class="table-header">Wij</td>
+          <td colspan="2" class="table-header">Zij</td>
+        </tr>
+        <tr class="score-table__intro">
+          <td>Ronde</td>
+          <td>Punten</td>
+          <td>Roem</td>
+          <td>Punten</td>
+          <td>Roem</td>
+        </tr>
+        <tr id="scoreTable"></tr>
+      </table>
+    </div>
+    <div class="actions-footer">
+      <button class="button button--primary" onClick="resetRound();"><i class="fa fa-undo-alt"></i></button>
+      <button class="button button--primary" onClick="newGame();"><i class="fa fa-step-forward"></i></button>
+    </div>
+
+    <div class="description">
+      
+        <a href="https://nl.wikipedia.org/wiki/Klaverjassen">Spelregels</a>
+    </div>
+
+    <!-- <div class="footer"></div> -->
+
+  </div>
+</body>
+
+</html>

@@ -115,12 +115,14 @@ nav a.active {
   transform-style: preserve-3d;
   overflow: hidden;
 
-  background-image: url('assets/hartenjagertje.png');
+  /* background-image: url('assets/hartenjagertje.png'); */
+
   /* background-color: rgba(255, 255, 255, 0.25); */
   /* background-blend-mode: lighten; */
   background-size: 50%;
   background-repeat: no-repeat;
   background-position: center;
+
 }
 #frame > p {
   /* font-family: "Source Sans Pro", sans-serif; */
@@ -303,4 +305,44 @@ nav a.active {
 
 .dimmed {
   opacity: 0.5;
+}
+
+.card-values-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-values-column {
+  /* width: 50%; */
+  margin: 5%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.card-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+}
+
+.card-value span {
+  /* flex: 1; Equal width columns */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Ensures content doesn't overflow */
+  text-overflow: ellipsis; /* Adds an ellipsis if the text is too long */
+  padding: 0 5px; /* Optional: Add some padding for better spacing */
+  text-align: left;
+}
+
+.value-box {
+  background-color: #f0f0f0; /* Light grey background */
+  color: #333; /* Darker text color */
+  /* padding: 5px 10px; */
+  border-radius: 5px;
+  text-align: right;
+  font-weight: bold;
 }
